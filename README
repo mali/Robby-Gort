@@ -1,0 +1,20 @@
+Compilation :
+ 'make' pour compiler les client/serveurs pia et serial
+ 'make all-pia' pour compiler client/serveur pia (si pb voir dans le Makefile)
+ 'make all-serial' pour compiler client/serveur serial et robbyd l'équivalent du serveur en mode démon.
+
+Utilisation :
+ './serial-robby-server' pour démarrer le serveur puis
+ './serial-robby-client' pour démarrer le client
+	- sans arguments, le client tentera de se connecter sur localhost(127.0.0.1) puis vous demandera les messages à envoyer au serveur.
+	- si le serveur n'est pas sur localhost './serial-robby-client ip_du_serveur'
+	- sinon './serial-robby-client ip_du_serveur liste_des_messages'
+
+exemple :
+$ ./serial-robby-server
+$ ./serial-robby-client 192.168.0.25 up left down up right down exit
+
+le client va se connecter au serveur(192.168.0.25) puis enchainer les messages dans l'ordre jusqu'à exit qui ve deconnecter le client.
+
+robbyd, le serveur en mode démon peut être lancé dans les scripts de démarrage rc.*, ainsi le serveur sera disponible sans avoir à ouvrir de session (voir ./scripts pour plus de détails).
+

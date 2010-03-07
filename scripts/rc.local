@@ -1,0 +1,15 @@
+#!/bin/sh
+#
+# /etc/rc.d/rc.local:  Local system initialization script.
+#
+# Put any local setup commands in here:
+
+# Laurent Navet
+
+# Le 03-05-2005
+# Starting robbyd daemon
+
+if [ -x /etc/rc.d/rc.robbyd ]; then
+    . /etc/rc.d/rc.robbyd start
+fi
+

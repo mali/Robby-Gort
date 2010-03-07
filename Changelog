@@ -1,0 +1,11 @@
+10/05/2005 (V1_03)
+	- Socket Communication is much stronger
+
+03/05/2005 (V1.03)
+	- integrating algau's modifications specially for OUTPUT/IMPUT 
+	definitions.
+
+03/05/2005 (V1.02)
+	- Doing a demon with serial-robby-server in order to launch it
+	in rc.d/ boot script
+	- Added make install uninistall rules

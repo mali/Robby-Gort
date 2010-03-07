@@ -1,0 +1,42 @@
+libpiapc
+
+I. Présentation
+
+Bibliothèque de contrôle pour carte d'interface PIA/PC.
+PIA/PC est une interface 24 entrées/sorties pour bus ISA.
+L'interface est constituée autour d'un circuit intégré 8255 associé à un circuit de décodage d'adresses.
+Trois ports de 8 données (1 octet) sont disponibles, un des ports étant fixé en sortie (Port A) et amplifié à travers un circuit buffer inverseur.
+L'interface pourra être configurée en 16 entrées - 8 sorties, 8 entrées - 16 sorties, ou 12 entrées - 12 sorties.
+
+
+I. Prérequis
+ Un accès à /dev/port en lecture/écriture est nécessaire, pour cela une des certainements nombreuse méthodes est de compiler l'éxécutable en 'root' et de rendre l'éxécutable 'setuid root' par la commande chmod ug+s nom_prog
+
+II. Compilation et installation
+
+il suffit de taper les commandes suivantes:
+ $ make
+
+puis, en root:
+ $ make install
+
+par défaut la libraire est installé dans /usr
+modifier ce chemin si nécessaire (PREFIX dans le Makefile)
+
+III. Utilisation
+
+un exemple est disponible:
+ $ make example
+ $ ./piapc
+
+
+pour utiliser la librairie:
+
+#include <piapc.h>
+
+__ voir piapc.h pour la liste des appels __
+
+compilation : utiliser -lpiapc en paramètre de gcc
+
+
+

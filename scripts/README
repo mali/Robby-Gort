@@ -1,0 +1,3 @@
+exemples de scripts à adapter à votre distrib. Sur une Slack, copiez rc.robbyd 
+dans etc/rc.d/ et invoquez le via /etc/rc.d/rc.local, ça ne devrait pas 
+perturber votre système :-)

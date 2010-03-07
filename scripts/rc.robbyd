@@ -1,0 +1,36 @@
+#!/bin/sh
+# Start/stop/restart robbyd, the Robby daemon.
+
+# Start robbyd:
+robbyd_start() {
+  if [ -x /usr/local/bin/robbyd ]; then
+    echo "Starting Robby daemon:  /usr/local/bin/robbyd"
+    /usr/local/bin/robbyd
+  fi
+}
+
+# Stop inetd:
+robbyd_stop() {
+  killall robbyd
+}
+
+# Restart inetd:
+robbyd_restart() {
+  robbyd_stop
+  sleep 1
+  robbyd_start
+}
+
+case "$1" in
+'start')
+  robbyd_start
+  ;;
+'stop')
+  robbyd_stop
+  ;;
+'restart')
+  robbyd_restart
+  ;;
+*)
+  echo "usage $0 start|stop|restart"
+esac
